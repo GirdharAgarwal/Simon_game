@@ -19,10 +19,17 @@ function nextSequence()
     },'fast');
     ptn.push(clr);
 }
-$(document).keypress(function(){
+$("#start").click(function(){
     nextSequence();
-    $(document).off("keypress");
-    console.log("hello");
+    $("#result").text("");
+});
+$("#end").click(function(){
+    playSound("wrong");
+    $("#level-title").html("Game Over<br><br>Press below to restart");
+    $("#result").text("Your Score - "+(level-1));
+    ptn.length=0;
+    userptn.length=0;
+    level=0;
 });
 $(".btn").click(function(){
     var userclr=this.id;
@@ -42,15 +49,10 @@ $(".btn").click(function(){
             {
                 f=1;
                 playSound("wrong");
-                $("#level-title").html("Game Over<br><br>Press a key to restart");
+                $("#level-title").html("Game Over<br><br>Press below to restart");
                 $("#result").text("Your Score - "+(level-1));
                 ptn.length=0;
                 level=0;
-                $(document).on("keypress",function()
-                {
-                    nextSequence();
-                    $(document).off("keypress");
-                });
                 break;
             }
         }

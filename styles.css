@@ -23,9 +23,17 @@ a{
   display: block;
   width: 50%;
   margin: auto;
-
+  
 }
-
+button{
+  background-color: #053742;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  padding: 1% 1%;
+  border-radius: 10px;
+  font-family: 'Source Code Pro', monospace;
+}
 .btn {
   margin: 10px;
   display: inline-block;

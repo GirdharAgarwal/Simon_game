@@ -10,28 +10,29 @@ a{
   font-family: 'Source Code Pro', monospace;
 }
 #level-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Source Code Pro', monospace;
   font-size: 3rem;
-  margin:  5%;
+  margin: 1%  5%;
 }
 #result{
   font-family: 'Press Start 2P', cursive;
   font-size: 2rem;
-  margin:  5%;
 }
 .container {
   display: block;
   width: 50%;
   margin: auto;
-  
 }
 button{
+  margin: 0px auto;
+  display: block;
   background-color: #053742;
   color: white;
   font-weight: bolder;
   font-size: 1.5rem;
   padding: 1% 1%;
   border-radius: 10px;
+  width: 200px;
   font-family: 'Source Code Pro', monospace;
 }
 .btn {
@@ -45,7 +46,7 @@ button{
 
 .game-over {
   background-color: red;
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
 .red {

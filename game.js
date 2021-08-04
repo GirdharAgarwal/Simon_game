@@ -19,14 +19,25 @@ function nextSequence()
     },'fast');
     ptn.push(clr);
 }
+function gameover(){
+    playSound("wrong");
+    $("#level-title").html("Game Over<br>Press below to restart");
+    if(level>=1)
+    $("#result").text("Your Score - "+(level-1));
+    else
+    $("#result").text("Your Score - 0");
+    $("body").addClass("game-over");
+    setTimeout(function(){
+        $("body").removeClass("game-over");
+    },100);
+}
 $("#start").click(function(){
+    level=0;
     nextSequence();
     $("#result").text("");
 });
 $("#end").click(function(){
-    playSound("wrong");
-    $("#level-title").html("Game Over<br><br>Press below to restart");
-    $("#result").text("Your Score - "+(level-1));
+    gameover();
     ptn.length=0;
     userptn.length=0;
     level=0;
@@ -48,9 +59,7 @@ $(".btn").click(function(){
             if(userptn[i]!=ptn[i])
             {
                 f=1;
-                playSound("wrong");
-                $("#level-title").html("Game Over<br><br>Press below to restart");
-                $("#result").text("Your Score - "+(level-1));
+                gameover();
                 ptn.length=0;
                 level=0;
                 break;
